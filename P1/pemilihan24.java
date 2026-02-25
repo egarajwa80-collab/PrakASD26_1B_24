@@ -44,7 +44,7 @@ public class pemilihan24 {
  System.out.println("=================================");
  System.out.print("Masukkan Nilai Tugas : ");
  tugas = sc.nextDouble();
- System.out.print("Masukkan Nilai Kuis : ");
+ System.out.print("Masukkan Nilai KUIS : ");
  kuis = sc.nextDouble();
  System.out.print("Masukkan Nilai UTS : ");
  uts = sc.nextDouble();
