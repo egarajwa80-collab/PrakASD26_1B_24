@@ -1,0 +1,92 @@
+import java.util.Scanner;
+public class tugas2_24 {
+static Scanner sc = new Scanner(System.in);
+static void inputJadwal(String[][] jadwal, int n) {
+for (int i = 0; i < n; i++) {
+System.out.println("Data jadwal ke-" + (i + 1));
+System.out.print("Nama Mata Kuliah: ");
+jadwal[i][0] = sc.nextLine();
+System.out.print("Ruang: ");
+jadwal[i][1] = sc.nextLine();
+System.out.print("Hari: ");
+jadwal[i][2] = sc.nextLine();
+System.out.print("Jam Kuliah: ");
+jadwal[i][3] = sc.nextLine();
+System.out.println();
+}
+}
+static void tampilSemuaJadwal(String[][] jadwal, int n) {
+System.out.println("===== Daftar Jadwal Kuliah =====");
+for (int i = 0; i < n; i++) {
+System.out.println("Jadwal ke-" + (i + 1));
+System.out.println("Mata Kuliah : " + jadwal[i][0]);
+System.out.println("Ruang : " + jadwal[i][1]);
+System.out.println("Hari : " + jadwal[i][2]);
+System.out.println("Jam Kuliah : " + jadwal[i][3]);
+System.out.println("-----------------------------");
+}
+}
+static void tampilJadwalHari(String[][] jadwal, int n, String hariCari) {
+System.out.println("===== Jadwal Hari " + hariCari + " =====");
+boolean ketemu = false;
+for (int i = 0; i < n; i++) {
+if (jadwal[i][2].equalsIgnoreCase(hariCari)) {
+ketemu = true;
+System.out.println("Mata Kuliah : " + jadwal[i][0]);
+System.out.println("Ruang : " + jadwal[i][1]);
+System.out.println("Jam Kuliah : " + jadwal[i][3]);
+System.out.println("-----------------------------");
+}
+}
+if (!ketemu) {
+System.out.println("Tidak ada jadwal pada hari " + hariCari);
+}
+}
+static void tampilJadwalMatkul(String[][] jadwal, int n, String matkulCari) {
+System.out.println("===== Jadwal Mata Kuliah " + matkulCari + " =====");
+boolean ketemu = false;
+for (int i = 0; i < n; i++) {
+if (jadwal[i][0].equalsIgnoreCase(matkulCari)) {
+ketemu = true;
+System.out.println("Ruang : " + jadwal[i][1]);
+System.out.println("Hari : " + jadwal[i][2]);
+System.out.println("Jam : " + jadwal[i][3]);
+System.out.println("-----------------------------");
+}
+}
+if (!ketemu) {
+System.out.println("Mata kuliah " + matkulCari + " tidak ditemukan.");
+}
+}
+public static void main(String[] args) {
+System.out.print("Masukkan jumlah jadwal kuliah: ");
+int n = Integer.parseInt(sc.nextLine());
+String[][] jadwal = new String[n][4];
+inputJadwal(jadwal, n);
+while (true) {
+System.out.println("\nMenu:");
+System.out.println("1. Tampilkan semua jadwal");
+System.out.println("2. Tampilkan jadwal berdasarkan hari");
+System.out.println("3. Tampilkan jadwal berdasarkan mata kuliah");
+System.out.println("4. Keluar");
+System.out.print("Pilih menu: ");
+int pilihan = Integer.parseInt(sc.nextLine());
+if (pilihan == 1) {
+tampilSemuaJadwal(jadwal, n);
+} else if (pilihan == 2) {
+System.out.print("Masukkan hari yang ingin dicari: ");
+String hari = sc.nextLine();
+tampilJadwalHari(jadwal, n, hari);
+} else if (pilihan == 3) {
+System.out.print("Masukkan nama mata kuliah yang ingin dicari: ");
+String matkul = sc.nextLine();
+tampilJadwalMatkul(jadwal, n, matkul);
+} else if (pilihan == 4) {
+System.out.println("Program selesai.");
+break;
+} else {
+System.out.println("Pilihan tidak valid!");
+}
+}
+}
+}
