@@ -43,7 +43,7 @@ public class pemilihan24 {
  System.out.println("Program Menghitung Nilai Akhir");
  System.out.println("=================================");
  System.out.print("Masukkan Nilai Tugas : ");
- tugas = sc.nextDouble();
+ tugas = sc.nextDouble(); 
  System.out.print("Masukkan Nilai KUIS : ");
  kuis = sc.nextDouble();
  System.out.print("Masukkan Nilai UTS : ");
