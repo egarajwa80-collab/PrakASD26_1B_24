@@ -17,6 +17,10 @@ public class MahasiswaMain24 {
 
         mhs1.tampilkanInformasi();
 
+        Mahasiswa24 mhs2 = new Mahasiswa24 ("Annisa Nabila","2141720160",3.25,"TI 2L");
+        mhs2.updateIPK(3.30);
+        mhs2.tampilkanInformasi();
+
         System.out.println("Nilai Kinerja: " + mhs1.nilaiKinerja());
     }
     
