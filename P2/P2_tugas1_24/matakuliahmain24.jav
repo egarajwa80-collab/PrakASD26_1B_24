@@ -7,7 +7,7 @@ public class matakuliahmain24 {
        
         matakuliah24 mk1 = new matakuliah24();
 
-        mk1.kodeMK = "MK001";
+        mk1.kodeMK = "ASD001";
         mk1.nama = "Algoritma dan Struktur Data";
         mk1.sks = 3;
         mk1.jumlahJam = 4;
@@ -20,9 +20,9 @@ public class matakuliahmain24 {
 
 
        
-        MataKuliah24 mk2 = new MataKuliah24(
-                "MK002",
-                "Pemrograman Berbasis Objek",
+        matakuliah24 mk2 = new matakuliah24(
+                "BD002",
+                "Basis Data",
                 2,
                 3
         );
