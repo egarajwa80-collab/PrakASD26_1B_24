@@ -1,10 +1,29 @@
 package P3.Praktikum03;
 
+import java.util.Scanner;
+
 public class MahasiswaDemo24 {
     public static void main(String[] args) {  
+     Scanner sc = new Scanner(System.in);
 
         Mahasiswa24[] arrayOfMahasiswa = new Mahasiswa24[3];
-       
+        String dummy;
+
+        for (int i = 0; i < 3; i++) {
+
+            System.out.println("Masukkan Data Mahasiswa ke-" + (i + 1));
+            System.out.print("NIM   : ");
+            arrayOfMahasiswa[i].nim = sc.nextLine();
+            System.out.print("Nama  : ");
+            arrayOfMahasiswa[i].nama = sc.nextLine();
+            System.out.print("kelas :");
+            arrayOfMahasiswa[i].kelas = sc.nextLine();
+            System.out.print("IPK   : ");
+            dummy = sc.nextLine();
+            arrayOfMahasiswa[i].ipk = Float.parseFloat(dummy);
+            System.out.println("---------------------------------");       
+        }
+
         arrayOfMahasiswa[0] = new Mahasiswa24();
         arrayOfMahasiswa[0].nim = "244107060033";
         arrayOfMahasiswa[0].nama = "AGNES TITANTA KINANTI";
@@ -23,6 +42,9 @@ public class MahasiswaDemo24 {
         arrayOfMahasiswa[2].kelas = "TI-2E";
         arrayOfMahasiswa[2].ipk = (float) 3.60;
     
+
+    for (int i=0; i < 3; i++) {
+        System.out.println("Data Mahasiswa ke-" + (i + 1));      
         System.out.println("NIM   :"+ arrayOfMahasiswa[0].nim);
         System.out.println("Nama  :"+ arrayOfMahasiswa[0].nama);
         System.out.println("Kelas  :"+ arrayOfMahasiswa[0].kelas);
@@ -39,5 +61,7 @@ public class MahasiswaDemo24 {
         System.out.println("IPK  :"+ arrayOfMahasiswa[2].ipk);
         System.out.println("---------------------------------");
 
+    }
+    sc.close();
     }
 }
